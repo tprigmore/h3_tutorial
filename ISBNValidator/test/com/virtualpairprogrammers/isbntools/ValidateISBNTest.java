@@ -7,8 +7,8 @@ import org.junit.jupiter.api.Test;
 class ValidateISBNTest {
 
 	@Test
-	void test() {
-		
+	void checkAValidISBN() {
+		fail();
 	}
 
 }
