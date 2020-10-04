@@ -2,6 +2,7 @@ package com.virtualpairprogrammers.isbntools;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 class ValidateISBNTest {
@@ -21,5 +22,14 @@ class ValidateISBNTest {
 		ValidateISBN validator = new ValidateISBN();
 		boolean result = validator.checkISBN("0140449117");
 		assertFalse(result);
+	}
+	
+	@Test
+	void nineDigitISBNAreNotAllowed() {
+		Assertions.assertThrows((RuntimeException.class), ()-> 
+		{
+		ValidateISBN validator = new ValidateISBN();
+		validator.checkISBN("123456789");
+		});
 	}
 }
