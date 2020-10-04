@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 class ValidateISBNTest {
 
 	@Test
-	void checkAValidISBN() {
+	void checkAValid10DigitISBN() {
 		ValidateISBN validator = new ValidateISBN();
 		boolean result = validator.checkISBN("0140449116");
 		assertTrue(result);
@@ -18,7 +18,7 @@ class ValidateISBNTest {
 	}
 	
 	@Test
-	void checkAnInvalidISBN() {
+	void checkAnInvalid10DigitISBN() {
 		ValidateISBN validator = new ValidateISBN();
 		boolean result = validator.checkISBN("0140449117");
 		assertFalse(result);
@@ -28,11 +28,19 @@ class ValidateISBNTest {
 	void checkAnValid13digitISBN() {
 		ValidateISBN validator = new ValidateISBN();
 		boolean result = validator.checkISBN("9781853260087");
-		assertFalse(result);
+		assertTrue(result);
 	}
 	
 	@Test
-	void endingInXIsvalidISBN() {
+	void checkAnInvalid13DigitISBN() {
+		ValidateISBN validator = new ValidateISBN();
+		boolean result = validator.checkISBN("9781853260085");
+		assertFalse(result);
+	}
+
+	
+	@Test
+	void endingInXIsvalid10DigitISBN() {
 		ValidateISBN validator = new ValidateISBN();
 		boolean result = validator.checkISBN("012000030X");
 		assertTrue(result);
