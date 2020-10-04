@@ -15,7 +15,7 @@ public class ValidateISBN {
 				throw new RuntimeException("ISBN number can't have letters");
 			}
 			else {
-			total += isbn.charAt(i) * (10 - i);
+			total += Character.getNumericValue(isbn.charAt(i)) * (10 - i);
 			}
 		}
 
