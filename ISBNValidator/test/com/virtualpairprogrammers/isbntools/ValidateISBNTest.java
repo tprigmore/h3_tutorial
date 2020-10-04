@@ -25,6 +25,14 @@ class ValidateISBNTest {
 	}
 	
 	@Test
+	void endingInXIsvalidISBN() {
+		ValidateISBN validator = new ValidateISBN();
+		boolean result = validator.checkISBN("012000030X");
+		assertTrue(result);
+	}
+
+	
+	@Test
 	void nineDigitISBNAreNotAllowed() {
 		Assertions.assertThrows((RuntimeException.class), ()-> 
 		{
