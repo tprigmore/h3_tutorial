@@ -30,6 +30,15 @@ class ValidateISBNTest {
 		{
 		ValidateISBN validator = new ValidateISBN();
 		validator.checkISBN("123456789");
+		});	
+	}
+	
+	@Test
+	void lettersISBNAreNotAllowed() {
+		Assertions.assertThrows((RuntimeException.class), ()-> 
+		{
+		ValidateISBN validator = new ValidateISBN();
+		validator.checkISBN("helloworld");
 		});
 	}
 }
